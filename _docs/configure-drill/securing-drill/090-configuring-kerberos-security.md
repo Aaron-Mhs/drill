@@ -14,7 +14,7 @@ See the [MIT Kerberos](http://web.mit.edu/kerberos/ "MIT Kerberos") documentatio
 
 ## Prerequisites
 
-The required Kerberos (JDBC) plugin is part of the Drill 1.11 package. To use it, you must have a working Kerberos infrastructure, which Drill does not provide. You must be working in a Linux-based or Windows Active Directory (AD) Kerberos environment with secure clusters and have a Drill server configured for Kerberos. See [Enabling Authentication and Encryption]({{site.baseurl}}/docs/configuring-kerberos-authentication/#enabling-authentication-and-encryption).
+The required Kerberos (JDBC) plugin is part of the Drill 1.11 package. To use it, you must have a working Kerberos infrastructure, which Drill does not provide. You must be working in a Linux-based or Windows Active Directory (AD) Kerberos environment with secure clusters and have a Drill server configured for Kerberos. See [Enabling Authentication and Encryption]({{site.baseurl}}/docs/configuring-kerberos-security/#enabling-authentication-and-encryption).
 
 ## Client Authentication Process 
 
@@ -73,9 +73,9 @@ To configure multiple mechanisms, extend the mechanisms list and provide additio
                   },
                 security.auth: {                         
                         mechanisms:["KERBEROS","PLAIN"],  
-                        principal:“drill/<clustername>@<REALM>.COM”,  
-                        keytab:“/etc/drill/conf/drill.keytab”  
-                        }  
+                        principal:"drill/<clustername>@<REALM>.COM",  
+                        keytab:"/etc/drill/conf/drill.keytab"  
+                        }, 
                  security.user: {
                         auth.enabled: true,
                         auth.packages += "org.apache.drill.exec.rpc.user.security",
